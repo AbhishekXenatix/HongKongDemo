@@ -5,7 +5,7 @@ pipeline{
     
     stage('Build Application from GIT'){
       steps{
-        git credentialsID: 'AbhishekXenatix' , url: 'https://github.com/AbhishekXenatix/HongKongDemo.git'
+        git credentialsId: 'b7551c8b-22b8-4ef3-8e17-954c584a0773', url: 'https://github.com/AbhishekXenatix/HongKongDemo.git'
       }
     }
     
