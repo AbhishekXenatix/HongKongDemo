@@ -21,11 +21,6 @@ pipeline{
       }
     }
   }
-  post
-  {
-    always
-    {
-          email body: 'Summary', subject: 'Pipeline Status', to: 'avyaanabhishek@gmail.com'
-    }
-  }
+
+
 }
