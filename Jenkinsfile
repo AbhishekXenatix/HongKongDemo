@@ -1,5 +1,7 @@
 pipeline{
   agent any
+  environment{
+  PATH = '/opt/homebrew/Cellar/maven/3.8.5/libexec' }
   
   stages{
     
@@ -15,12 +17,6 @@ pipeline{
       }
     }
     
-    stage('Deploy Application'){
-      steps{
-        echo 'Deploy App'
-      }
-    }
+
   }
-
-
 }
