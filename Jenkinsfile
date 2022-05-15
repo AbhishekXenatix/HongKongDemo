@@ -1,8 +1,9 @@
 pipeline{
   agent any
-  environment{
-  PATH = '/opt/homebrew/Cellar/maven/3.8.5/libexec' }
-  
+  tools{
+  maven 'Maven'
+  }
+
   stages{
     
     stage('Build Application from GIT'){
