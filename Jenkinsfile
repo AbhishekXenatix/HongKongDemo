@@ -3,21 +3,21 @@ pipeline{
   
   stages{
     
-    stage('Build Application'){
+    stage('Build Application from GIT'){
       steps{
-        echo'Build App'
+        git credentialsID: 'AbhishekXenatix' , url: 'https://github.com/AbhishekXenatix/HongKongDemo.git'
       }
     }
     
   stage('Test Application'){
       steps{
-        echo'Test App'
+        sh "mvn clean test"
       }
     }
     
     stage('Deploy Application'){
       steps{
-        echo'Deploy App'
+        echo 'Deploy App'
       }
     }
   }
@@ -25,7 +25,7 @@ pipeline{
   {
     always
     {
-      emailext body: 'Summary', subject: 'Pipeline Status', to: 'avyaanabhishek@gmail.com'
+          email body: 'Summary', subject: 'Pipeline Status', to: 'avyaanabhishek@gmail.com'
     }
   }
 }
